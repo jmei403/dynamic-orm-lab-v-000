@@ -64,8 +64,7 @@ class InteractiveRecord
     hash.each do |attr, value|
       sql = "SELECT * FROM #{self.table_name} WHERE '#{attr}' = '#{value}'"
 
-      result = DB[:conn].execute(sql)
-      result
+      DB[:conn].execute(sql)
     end
   end
 end
